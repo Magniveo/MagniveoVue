@@ -20,7 +20,6 @@ namespace MagniveoVue.DataAccess
              : base(cs, dbtype, version)
         {
         }
-
     }
 
     /// <summary>
@@ -31,7 +30,7 @@ namespace MagniveoVue.DataAccess
     {
         public DataContext CreateDbContext(string[] args)
         {
-            return new DataContext("你的完整连接字符串", DBTypeEnum.SqlServer);
+            return new DataContext("Default", DBTypeEnum.SqlServer);
         }
     }
 

@@ -28,3 +28,5 @@ export default [
   { key: "WtmCreateForm", value: CreateForm },
   { key: "WtmRenderView", value: RenderView }
 ];
+
+

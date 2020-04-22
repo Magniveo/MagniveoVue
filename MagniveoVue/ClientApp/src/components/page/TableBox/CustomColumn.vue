@@ -8,7 +8,7 @@
         </el-checkbox-group>
         <div class="col-but" @click="onOpenCol">
             <i :class="[isColBox ? 'el-icon-s-unfold' : 'el-icon-s-fold']" />
-            自定义列
+            Пользовательский столбец
         </div>
     </div>
     <!-- Popover 弹出框 -->
@@ -20,7 +20,7 @@
         </el-checkbox-group>
         <div slot="reference" class="col-but" @click="onOpenCol">
             <i :class="[isColBox ? 'el-icon-s-unfold' : 'el-icon-s-fold']" />
-            自定义列
+            Пользовательский столбец
         </div>
     </el-popover>
 </template>

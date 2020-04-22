@@ -2,17 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MagniveoVue.DataAccess;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using WalkingTec.Mvvm.Core;
 
 namespace MagniveoVue.Services.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ItemController : Controller
     {
+        private readonly DataContext _context;
+
+        public ItemController()
+        {//@"Server=(localdb)\\mssqllocaldb;Database=MagniveoVue_db;Trusted_Connection=True;",
+            _context = new DataContext(@"Server=(localdb)\\mssqllocaldb;Database=MagniveoVue_db;Trusted_Connection=True;", DBTypeEnum.SqlServer);
+            //new DataContext("Default", DBTypeEnum.SqlServer);
+            try 
+            {
+                var test = _context.ModelItems.ToList();
+            }
+            catch (Exception ex) 
+            { 
+            
+            }
+        }
         // GET: Item
-        public ActionResult Index()
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Model.ModelItem.Item>>> GetHouseModels()
         {
-            return View();
+            return await _context.ModelItems.ToListAsync();
         }
 
         // GET: Item/Details/5

@@ -112,7 +112,7 @@ function mixinFunc(ASSEMBLIES: Array<string> = []) {
         const parameters = [params.ID];
         this.batchDelete(parameters).then(res => {
           this["$notify"]({
-            title: "删除成功",
+              title: "Успешно удален",
             type: "success"
           });
           this["onHoldSearch"]();
@@ -128,7 +128,7 @@ function mixinFunc(ASSEMBLIES: Array<string> = []) {
         console.log('this["selectData"]', this["selectData"], parameters);
         this.batchDelete(parameters).then(res => {
           this["$notify"]({
-            title: "删除成功",
+            title: "Успешно удален",
             type: "success"
           });
           this["onHoldSearch"]();
@@ -147,7 +147,7 @@ function mixinFunc(ASSEMBLIES: Array<string> = []) {
       this.exportExcel(parameters).then(res => {
         createBlob(res, this["$route"].name + "all");
         this["$notify"]({
-          title: "导出成功",
+            title: "Экспорт успешно завершен",
           type: "success"
         });
       });
@@ -160,7 +160,7 @@ function mixinFunc(ASSEMBLIES: Array<string> = []) {
       this.exportExcelByIds(parameters).then(res => {
         createBlob(res, this["$route"].name);
         this["$notify"]({
-          title: "导出成功",
+            title: "Экспорт успешно завершен",
           type: "success"
         });
       });
@@ -187,7 +187,7 @@ function mixinFunc(ASSEMBLIES: Array<string> = []) {
       };
       this.imported(parameters).then(res => {
         this["$notify"]({
-          title: "导入成功",
+            title: "Импорт успешно выполнен",
           type: "success"
         });
         this["onHoldSearch"]();
@@ -197,10 +197,10 @@ function mixinFunc(ASSEMBLIES: Array<string> = []) {
      * 删除确认
      * @param title
      */
-    onConfirm(title: string = "确认删除, 是否继续?") {
-      return this["$confirm"](title, "提示", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      onConfirm(title: string = "Подтвердите удаление, следует ли продолжать?") {
+          return this["$confirm"](title, "Подсказка", {
+              confirmButtonText: "Определить",
+              cancelButtonText: "Отменен",
         type: "warning"
       });
     }

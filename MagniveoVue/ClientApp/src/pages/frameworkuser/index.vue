@@ -53,11 +53,11 @@ export default class Index extends Vue {
             formItem: {
                 ITCode: {
                     type: "input",
-                    label: "账号"
+                    label: "Номер счета"
                 },
                 Name: {
                     type: "input",
-                    label: "姓名"
+                    label: "Полное имя"
                 }
             }
         };

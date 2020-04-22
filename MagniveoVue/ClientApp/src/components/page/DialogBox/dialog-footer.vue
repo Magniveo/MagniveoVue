@@ -1,10 +1,10 @@
 <template>
   <div slot="footer" class="dialog-footer">
     <el-button @click="onClose">
-      关 闭
+      Закрыть
     </el-button>
     <el-button v-if="status !== detail" type="primary" @click="onSubmit">
-      提 交
+      Сохранить
     </el-button>
   </div>
 </template>

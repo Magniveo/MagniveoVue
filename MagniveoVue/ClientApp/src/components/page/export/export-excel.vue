@@ -7,24 +7,24 @@
       <!-- <div class="text-title">
                 如果导出的数据过多会导致导出时间稍长，请您耐心等待
             </div> -->
-      <div v-show="!isFinish" class="text-title">
-        正在导出中，请耐心等待...{{ animatedNumber }}%
-      </div>
+        <div v-show="!isFinish" class="text-title">
+            Пожалуйста, терпеливо ждать при экспорте...{{ animatedNumber }}%
+        </div>
       <div v-if="isFinish" class="text-title">
-        <p class="success-title">
-          <i class="el-icon-check success-icon" />成功导出{{ position }}条订单
-        </p>
+          <p class="success-title">
+              <i class="el-icon-check success-icon" />Успешно экспортировано{{ position }}Статья заказ
+          </p>
         <p class="success-text">
-          请在电脑的下载文件夹中查看
+            Пожалуйста, проверьте в папке загрузки вашего компьютера
         </p>
       </div>
 
       <el-progress v-show="!isFinish" class="progress-class" :text-inside="true" :stroke-width="18" :percentage="animatedNumber" />
 
       <flex-box justify="space-between">
-        <el-button type="primary" :disabled="isExporting" :loading="btnLoading" @click="onBegin">
-          导出
-        </el-button>
+          <el-button type="primary" :disabled="isExporting" :loading="btnLoading" @click="onBegin">
+              Экспорт
+          </el-button>
 
         <el-button @click="onClose">
           {{ textTips }}
@@ -57,7 +57,7 @@ type optionsType = {
 export default class ExportExcel extends Vue {
     @Prop({ type: String, default: "/export/orders.xlsx" })
     exportUrl;
-    @Prop({ type: String, default: "导出" })
+    @Prop({ type: String, default: "Экспорт" })
     btnName;
     @Prop({ type: String, default: "primary" })
     btnType;
@@ -65,7 +65,7 @@ export default class ExportExcel extends Vue {
     querySession;
     @Prop({ type: String, default: "" })
     batchType;
-    @Prop({ type: String, default: "提示" })
+    @Prop({ type: String, default: "Подсказка" })
     title;
     @Prop({ type: String, default: "./" })
     postParam;
@@ -135,11 +135,11 @@ export default class ExportExcel extends Vue {
             // this["setProgress"](100);
             this.btnLoading = false;
             this.download();
-            this.textTips = "确 认";
+            this.textTips = "Подтверждение";
         }
     }
     onExport() {
-        this.textTips = "取 消";
+        this.textTips = "Отменить";
         this.dialogVisible = true;
     }
     onClose() {

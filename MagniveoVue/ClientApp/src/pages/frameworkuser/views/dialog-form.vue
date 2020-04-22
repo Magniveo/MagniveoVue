@@ -38,60 +38,60 @@ export default class Index extends Vue {
                 },
                 "Entity.ITCode": {
                     type: "input",
-                    label: "账号",
+                    label: "Номер счета",
                     rules: {
                         required: true,
-                        message: "请输入账号",
+                        message: "Пожалуйста, войдите в аккаунт",
                         trigger: "blur"
                     }
                 },
                 "Entity.Password": {
                     type: "input",
-                    label: "密码",
+                    label: "Пароль",
                     rules: {
                         required: true,
-                        message: "请输入账号",
+                        message: "Пожалуйста, войдите в аккаунт",
                         trigger: "blur"
                     },
                     isHidden: (res, status) => status === "edit"
                 },
                 "Entity.Email": {
                     type: "input",
-                    label: "邮箱"
+                    label: "Email"
                 },
                 "Entity.Name": {
                     type: "input",
-                    label: "姓名",
+                    label: "Имя",
                     rules: {
                         required: true,
-                        message: "请输入姓名",
+                        message: "Пожалуйста, введите имя",
                         trigger: "blur"
                     }
                 },
                 "Entity.Sex": {
                     type: "select",
-                    label: "性别",
+                    label: "Пол",
                     children: sexList
                 },
                 "Entity.CellPhone": {
                     type: "input",
-                    label: "手机号"
+                    label: "Телефон"
                 },
                 "Entity.HomePhone": {
                     type: "input",
-                    label: "座机"
+                    label: "Домашний телефон"
                 },
                 "Entity.Address": {
                     type: "input",
-                    label: "住址"
+                    label: "Адрес"
                 },
                 "Entity.ZipCode": {
                     type: "input",
-                    label: "邮编"
+                    label: "Почтовый код"
                 },
                 "Entity.PhotoId": {
                     type: "wtmUploadImg",
-                    label: "头像",
+                    label: "Фото",
                     props: {
                         isHead: true,
                         imageStyle: { width: "100px", height: "100px" }
@@ -99,39 +99,39 @@ export default class Index extends Vue {
                 },
                 "Entity.IsValid": {
                     type: "switch",
-                    label: "是否有效",
+                    label: "Действующий",
                     defaultValue: true
                 },
                 "Entity.UserRoles": {
                     type: "transfer",
-                    label: "角色",
+                    label: "Роль",
                     mapKey: "RoleId",
                     props: {
                         data: this.getFrameworkRolesData.map(item => ({
                             key: item.Value,
                             label: item.Text
                         })),
-                        titles: ["所有", "已选"],
+                        titles: ["Все", "Выбранный"],
                         filterable: true,
                         filterMethod: filterMethod,
-                        "filter-placeholder": "请输入角色"
+                        "filter-placeholder": "Пожалуйста, введите роль"
                     },
                     span: 24,
                     defaultValue: []
                 },
                 "Entity.UserGroups": {
                     type: "transfer",
-                    label: "用户组",
+                    label: "Группа пользователей",
                     mapKey: "GroupId",
                     props: {
                         data: this.getFrameworkGroupsData.map(item => ({
                             key: item.Value,
                             label: item.Text
                         })),
-                        titles: ["所有", "已选"],
+                        titles: ["Все", "Выбранный"],
                         filterable: true,
                         filterMethod: filterMethod,
-                        "filter-placeholder": "请输入用户组"
+                        "filter-placeholder": "Пожалуйста, введите группу пользователей"
                     },
                     span: 24,
                     defaultValue: []

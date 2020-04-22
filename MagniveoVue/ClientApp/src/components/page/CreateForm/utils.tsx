@@ -93,7 +93,7 @@ export default class Utils {
       style,
       slot,
     };
-    let placeholder = `请输入${option.label}`;
+      let placeholder = `Пожалуйста, введите ${option.label}`;
     if (props && props.placeholder) {
       placeholder = props.placeholder;
     }

@@ -13,13 +13,13 @@
           <el-table-column v-else-if="item.isOperate" :key="index" :label="item.label" :width="item.width" :align="item.align || 'center'" :fixed="item.fixed">
             <template slot-scope="scope">
               <el-button v-if="item.actions.includes('detail')" v-visible="actionList.detail" type="text" size="small" class="view-btn" @click="colEvents.onDetail(scope.row)">
-                详情
+                Подробнее
               </el-button>
               <el-button v-if="item.actions.includes('edit')" v-visible="actionList.edit" type="text" size="small" class="view-btn" @click="colEvents.onEdit(scope.row)">
-                修改
+                Изменить
               </el-button>
               <el-button v-if="item.actions.includes('deleted')" v-visible="actionList.batchDelete" type="text" size="small" class="view-btn" @click="colEvents.onDelete(scope.row)">
-                删除
+                Удалить
               </el-button>
             </template>
           </el-table-column>

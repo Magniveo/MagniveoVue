@@ -24,7 +24,7 @@ namespace MagniveoVue
         {
             CreateWebHostBuilder(args).Build().Run();
         }
-
+        public IConfiguration Configuration { get; }
         public static IHostBuilder CreateWebHostBuilder(string[] args)
         {
 

@@ -2,27 +2,27 @@
     <div class="but-box">
         <slot />
         <el-button v-assembly:[assembly]="butTypes.add" v-visible="actionList[actionKeys.add]" type="primary" icon="el-icon-plus" @click="onAdd">
-            添加
+            Добавить
         </el-button>
         <el-button v-assembly:[assembly]="butTypes.edit" v-visible="actionList[actionKeys.edit]" type="primary" :disabled="isDisabledEdit" icon="el-icon-edit" @click="onEdit">
-            修改
+            Изменить
         </el-button>
         <el-button v-assembly:[assembly]="butTypes.deleted" v-visible="actionList[actionKeys.batchDelete]" type="primary" :disabled="isDisabledEelete" icon="el-icon-delete" @click="onBatchDelete">
-            删除
+            Удалить
         </el-button>
         <el-button v-assembly:[assembly]="butTypes.imported" v-visible="actionList[actionKeys.import]" type="primary" icon="el-icon-upload" @click="onImported">
-            导入
+            Импорт
         </el-button>
         <el-dropdown v-visible="[actionList[actionKeys.exportExcel],actionList[actionKeys.exportExcelByIds]]" class="dropdown-box" @command="onCommand">
             <el-button v-assembly:[assembly]="butTypes.export" type="primary">
-                <i class="el-icon-download" /> <span>导出</span> <i class="el-icon-arrow-down el-icon--right" />
+                <i class="el-icon-download" /> <span>Экспорт</span> <i class="el-icon-arrow-down el-icon--right" />
             </el-button>
             <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item v-visible="actionList[actionKeys.exportExcel]" command="onExportAll">
-                    导出全部
+                    Экспортировать все
                 </el-dropdown-item>
                 <el-dropdown-item v-visible="actionList[actionKeys.exportExcelByIds]" command="onExport">
-                    导出勾选
+                    Экспортный чек
                 </el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
